@@ -1,7 +1,7 @@
 
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 /*.abc img {
   display: block;
@@ -9,11 +9,7 @@
   margin-right: auto;
   position: relative;
 }*/
-.container {
-  position: relative;
-  width: 25%;
- left:38%;
-}
+
 
 
 .container img {
@@ -23,36 +19,75 @@
 }
 
 
-
 h1
 {
-text-align:center;
+
 color:Tomato;
+text-align:right;
+
 }
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+body{
+   position:absolute;
+ padding:0px;
+ margin:0px; 
+overflow:hidden;
+
 }
 
-
+html{
+   position:absolute;
+ margin:0px;
+  padding:0px;
+}
+.container #btn1
+{
+left:100%;
+}
+.container #btn2
+{
+left:100%;
+}
+.container #btn3
+{
+left:100%;
+}
+.container #btn4
+{
+left:100%;
+}
+.container #btn5
+{
+left:100%;
+}
+.container #btn6
+{
+left:100%;
+}
+.container #btn7
+{
+left:120%;
+}
 
 </style>
 
 </head>
-<body style="overflow: hidden;">
-<h1>Lighting Ceremony</h1>
+<body >
 
-<div >
-  <img src="normal1.jpg"   height="450" width="400" style="position:fixed;left:35%;top:10%;">
- <p align="right"><input type="button"  id ="btn1" value="Client1"  style="position:fixed;background-color: #4CAF50;bottom:70%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p><br>
-<p align="right"><input type="button"  id="btn2" value="Client2"  style="position:fixed;background-color: #4CAF50;bottom:62%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p><br>
-<p align="right"><input type="button" id="btn3" value="Client3"  style="position:fixed;background-color: #4CAF50;bottom:54%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
-<p align="right"><input type="button" id="btn4" value="Client4"  style="position:fixed;background-color: #4CAF50;bottom:46%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
-<p align="right"><input type="button" id="btn5" value="Client5"  style="position:fixed;background-color: #4CAF50;bottom:38%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
-<p align="right"><input type="button" id="btn6" value="Client6"  style="position:fixed;background-color: #4CAF50;bottom:30%;right:20%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
-<p align="right"><input type="button" id="btn7"  value="Reset"  style="position:fixed;background-color: #4CAF50;bottom:50%;right:10%;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+
+<h1 >Lighting Ceremony</h1>
+  <img src="normal1.jpg"   height="500" width="450" style="position:relative;left:30%;top:10%;">
+
+<div class="container" >
+ <p align="right"><input type="button"  id ="btn1" value="Client1"  style="position:relative;background-color: #4CAF50;bottom:460px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button"  id="btn2" value="Client2"  style="position:relative;background-color: #4CAF50;bottom:440px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button" id="btn3" value="Client3"  style="position:relative;background-color: #4CAF50;bottom:420px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button" id="btn4" value="Client4"  style="position:relative;background-color: #4CAF50;bottom:400px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button" id="btn5" value="Client5"  style="position:relative;background-color: #4CAF50;bottom:380px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button" id="btn6" value="Client6"  style="position:relative;background-color: #4CAF50;bottom:360px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
+<p align="right"><input type="button" id="btn7"  value="Reset"  style="position:relative;background-color: #4CAF50;bottom:600px;border-radius: 8px;padding: 7px 5px;cursor:pointer;color:white;"/></p>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
 <script>
        let img=document.querySelector('img');
 let btn1=document.querySelector('#btn1');
@@ -78,6 +113,24 @@ img.src='lamp3.jpg';
 btn7.addEventListener('click',()=>{
 img.src='normal1.jpg';
 }) 
+$(document).ready(function() {
+
+
+	
+factor_x = ($(window).width()) / WIDTH;
+temp = (($(window).width())*HEIGHT/ WIDTH);
+factor_y = temp/HEIGHT;
+('html').css("transform","scale("+factor_x+","+factor_y+")");  
+//For Firefox
+$('html').css("-moz-transform","scale("+factor_x+","+factor_y+")"); 
+      
+//For Google Chrome
+$('html').css("-webkit-transform","scale("+factor_x+","+factor_y+")");
+
+//For Opera
+$('html').css("-o-transform","scale("+factor_x+","+factor_y+")");
+
+});
 </script>
 
 </body>
